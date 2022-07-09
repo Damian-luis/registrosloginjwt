@@ -19,10 +19,10 @@ function App() {
 
   async function handlerSend(e){
     e.preventDefault()
-    console.log(user.name)
+    console.log(user.name,user.password)
     
     try{
-      await axios.get(`http://localhost:3001/user/${user.name}`).then(e=>{setUseractive(e.data)})
+      await axios.get(`http://localhost:3001/user/${user.name}/${user.password}`).then(e=>{setUseractive(e.data)})
     }
     catch(e){console.log(e)}
     
